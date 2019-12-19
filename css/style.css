@@ -18,9 +18,8 @@ h1 {
 /* form area */
 .form_area {
   width: 80%;
-  height: 200px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 10px auto;
+  padding: 10px;
   border-radius: 10px;
   background-color: #FBFCFC;
   box-shadow:  5px 5px 1px 0px rgba(44, 62, 80 ,0.15);
@@ -28,7 +27,7 @@ h1 {
 .row {
   display: flex;
   justify-content: center;
-  margin: 20px 0 40px 0;
+  margin: 20px 0;
 }
 .col {
   display: flex;
@@ -37,15 +36,62 @@ h1 {
   padding: 0 20px;
 }
 .col label {
+  margin-bottom: 10px;
   font-size: 16px;
   color: #CB4335;
 }
+input  {
+  width: 180px;
+  height: 34px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #CB4335;
+  font-size: 16px;
+}
+input:focus  {
+  background-color: #CB4335;
+  font-size: 16px;
+  color: #FBFCFC;
+}
+select  {
+  width: 180px;
+  height: 34px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #CB4335;
+  font-size: 16px;
+}
+input::placeholder {
+  text-align: center;
+  font-size: 16px;
+}
 .btn {
-  margin: 0 15px;
+  margin: 30px 15px 0 15px;
   padding: 10px;
   border-radius: 5px;
   background-color: #D0D3D4;
   border: 1px solid #5F6A6A;
   font-size: 16px;
+  font-weight: 600;
   color: #CB4335;
+  cursor: pointer;
+}
+
+/* ticket area */
+.ticket_area {
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #FBFCFC;
+  box-shadow:  5px 5px 1px 0px rgba(44, 62, 80 ,0.15);
+}
+.ticket_area h3 {
+  text-transform: uppercase;
+}
+.ticket_left {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  background-color: #B3B6B7;
 }
