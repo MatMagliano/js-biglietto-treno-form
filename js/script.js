@@ -9,47 +9,55 @@
 // sconto del 20% per i minorenni e del
 // 40% per gli over 65.
 
-//partenza
-// var insertFrom = prompt('Da dove vuoi partire?')
-// document.getElementById('from').innerHTML = insertFrom;
-
-//arrivo
-// var insertTo = prompt('Dove vuoi andare?')
-// document.getElementById('to').innerHTML = insertTo;
-
-//inserire chilometri da percorrere
-var insertKm = parseInt(prompt('Quanti km vuoi percorrere?'));
-document.getElementById('km').innerHTML = insertKm + ' km';
-
-//inserire nome e cognome
-// var name = prompt('Inserire nome')
-// var surname = prompt('Inserire cognome')
-//  document.getElementById('name').innerHTML = name + ' ' + surname;
+var buttonGenera = document.getElementById('genera');
+buttonGenera.addEventListener('click',
+function() {
+  //inserire nome e cognome
+  var inputName = document.getElementById('user_name');
+  var userName = inputName.value;
 
 
-//inserire età
-var age = parseInt(prompt('Quanti anni hai?'));
-console.log(age);
+  //inserire chilometri da percorrere
+  var inputKm = document.getElementById('km_to_do');
+  var km = parseInt(inputKm.value);
 
-//prezzo biglietto intero
-var ticketPrice = insertKm * 0.21;
-document.getElementById('price').innerHTML = ticketPrice;
+  //inserire età
+  var inputAge = document.getElementById('age');
+  var age = inputAge.value;
 
-//calcolo prezzo in base all'età
-// if (age < 18) {
-//   console.log(ticketPrice - ((ticketPrice * 20) / 100) + '0€');
-//
-// } else if (age > 65) {
-//   console.log(ticketPrice - ((ticketPrice * 40) / 100) + '0€');
-// } else {
-//   console.log(ticketPrice + '0€');
-// }
+  //prezzo biglietto intero
+  var ticketPrice = km * 0.21;
 
-//sconto
-if (age < 18) {
-   document.getElementById('discount').innerHTML = ' ' + 'Junior';
-} else if (age > 65) {
-   document.getElementById('discount').innerHTML = ' ' + 'Senior';
-} else {
-   document.getElementById('discount').innerHTML = ' ' + 'Standard';
+  //calcolo prezzo in base all'età
+  if (age == 'minorenne') {
+    ticketPrice -= ((ticketPrice * 20) / 100);
+    tariffa = 'Sconto minorenne'
+
+  } else if (age == 'over65') {
+    tariffa -= 'Sconto silver'
+  } else {
+    tariffa = 'Tariffa standard'
+  }
+
+  var carrozza = Math.floor(Math.random() * 9) + 1;
+  var cp = Math.floor(Math.random() * (99999 - 90000 + 1)) + 90000;
+
+  document.getElementById('name').innerHTML = userName;
+  document.getElementById('carrozza').innerHTML = carrozza;
+  document.getElementById('code').innerHTML = cp;
+  document.getElementById('tariffa').innerHTML = tariffa;
+  document.getElementById('price').innerHTML = ticketPrice.toFixed(2) + '€';
 }
+
+);
+
+var buttonGenera = document.getElementById('annulla');
+buttonGenera.addEventListener('click',
+function() {
+  document.getElementById('name').innerHTML = '';
+  document.getElementById('carrozza').innerHTML = '';
+  document.getElementById('code').innerHTML = '';
+  document.getElementById('tariffa').innerHTML = '';
+  document.getElementById('price').innerHTML = '';
+}
+);
