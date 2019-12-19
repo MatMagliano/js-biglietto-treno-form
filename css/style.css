@@ -4,7 +4,48 @@
   box-sizing: border-box;
 }
 body {
-  
   background-color: #CB4335;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Prompt', sans-serif;
+  font-size: 14px;
+}
+h1 {
+  margin-top: 3%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* form area */
+.form_area {
+  width: 80%;
+  height: 200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #FBFCFC;
+  box-shadow:  5px 5px 1px 0px rgba(44, 62, 80 ,0.15);
+}
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px 0;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+.col label {
+  font-size: 16px;
+  color: #CB4335;
+}
+.btn {
+  margin: 0 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #D0D3D4;
+  border: 1px solid #5F6A6A;
+  font-size: 16px;
+  color: #CB4335;
 }
